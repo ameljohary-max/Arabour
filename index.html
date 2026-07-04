@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arabour Academy | Learn Quran & Arabic Online</title>
+
+    <!-- تم تحديث الأيقونة لتطابق الشعار الفعلي logo.png -->
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;900&family=Cinzel:wght@700&family=Plus+Jakarta+Sans:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=5.0">
+</head>
+
+<body>
+
+    <header id="mainHeader">
+        <a href="#" class="logo-container">
+            <!-- تم التحديث إلى logo.png الفعلي المرفق -->
+            <img src="logo.png" alt="Arabour Academy Logo" class="logo-img" id="logoImg">
+            <div class="logo-text-wrapper" id="logoTextWrapper">
+                <div class="logo-text">ARABOUR</div>
+                <div class="logo-sub">Academy</div>
+            </div>
+        </a>
+        <nav>
+            <!-- تم تعديل الرابط هنا ليرتبط بقسم الهيرو بشكل صحيح -->
+            <a href="#home" id="navHome">Home</a>
+            <a href="#about" id="navAbout">About</a>
+            <a href="#pricing" id="navPricing">Plans</a>
+            <a href="#contact" id="navContact">Contact</a>
+        </nav>
+
+        <div class="custom-dropdown" id="langDropdown">
+            <button class="dropdown-btn" onclick="toggleDropdown()">
+                <i class="fas fa-globe"></i>
+                <span id="currentLangText">English</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="dropdown-menu">
+                <div onclick="selectLanguage('en')">English</div>
+                <div onclick="selectLanguage('ar')">العربية</div>
+                <div onclick="selectLanguage('ru')">Русский</div>
+                <div onclick="selectLanguage('fr')">Français</div>
+                <div onclick="selectLanguage('de')">Deutsch</div>
+                <div onclick="selectLanguage('tr')">Türkçe</div>
+                <div onclick="selectLanguage('es')">Español</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- توحيد رقم الواتساب العائم -->
+    <a href="https://wa.me/201070487205" target="_blank" class="floating-whatsapp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <main style="flex: 1;">
+
+        <section class="hero" id="home">
+            <h1 id="heroTitle">Speak Arabic | Live The Quran</h1>
+            <p id="heroDesc">Premium online education in Holy Quran, Arabic Language, and Islamic Studies taught by
+                expert native Egyptian tutors with rich experience.</p>
+        </section>
+
+        <section id="about">
+            <h2 class="section-title" id="servicesTitle">Our <span>Core Programs</span></h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-book-open"></i>
+                    <h3 id="s1Title">Arabic Language</h3>
+                    <p id="s1Desc">From alphabet basics to full fluency with custom structured plans.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-quran"></i>
+                    <h3 id="s2Title">Holy Quran & Tajweed</h3>
+                    <p id="s2Desc">Proper recitation mechanics and structured memorization tracks.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-mosque"></i>
+                    <h3 id="s3Title">Islamic Studies</h3>
+                    <p id="s3Desc">Essential foundation in Fiqh, Seerah, and Aqeedah for daily life.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing">
+            <h2 class="section-title" id="pricingTitle">Flexible <span>Monthly Subscriptions</span></h2>
+
+            <div class="currency-switcher" id="currencySwitcher">
+                <button type="button" class="currency-btn active" data-currency="gbp" onclick="setCurrency('gbp')">£
+                    GBP</button>
+                <button type="button" class="currency-btn" data-currency="usd" onclick="setCurrency('usd')">$
+                    USD</button>
+                <button type="button" class="currency-btn" data-currency="eur" onclick="setCurrency('eur')">€
+                    EUR</button>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Starter Plan -->
+                <div class="price-card" onclick="openBooking(document.getElementById('p1Name').innerText)">
+                    <div class="discount-badge" id="d1">Save 31%</div>
+                    <div class="plan-name" id="p1Name">Starter Plan</div>
+                    <div class="old-price" id="p1Old">£100</div>
+                    <div class="new-price"><span id="p1NewPrice">£69</span><span class="cycle" id="p1Cycle">/mo</span>
+                    </div>
+                    <div class="hourly-rate-hint" id="p1Hourly">* Only £11.5 per hour</div>
+
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> <span id="p1F1">8 Live Classes / Month</span></li>
+                        <li><i class="fas fa-check"></i> <span id="p1F2">45 Minutes Per Class</span></li>
+                        <li><i class="fas fa-check"></i> <span id="p1F3">1-on-1 Individual Sessions</span></li>
+                        <li><i class="fas fa-check"></i> <span id="p1F4">Monthly Progress & Performance Reports</span>
+                        </li>
+                        <li><i class="fas fa-check"></i> <span id="p1F5">Expert Egyptian Tutors</span></li>
+                    </ul>
+                    <button class="book-btn" id="b1">Book Free Trial</button>
+                </div>
+
+                <!-- Standard Plan -->
+                <div class="price-card featured" onclick="openBooking(document.getElementById('p2Name').innerText)">
+                    <div class="recommended-badge" id="p2Recommended">Best Value</div>
+                    <div class="discount-badge" id="d2">Save 33%</div>
+                    <div class="plan-name" id="p2Name">Standard Plan</div>
+                    <div class="old-price" id="p2Old">£120</div>
+                    <div class="new-price"><span id="p2NewPrice">£80</span><span class="cycle" id="p2Cycle">/mo</span>
+                    </div>
+                    <div class="hourly-rate-hint" id="p2Hourly" style="color: var(--gold-bright); font-weight: bold;">*
+                        Best Value: £10 per hour</div>
+
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> <span id="p2F1">8 Live Classes / Month</span></li>
+                        <li><i class="fas fa-check"></i> <span id="p2F2">60 Minutes Full Hour</span></li>
+                        <li><i class="fas fa-check"></i> <span id="p2F3">1-on-1 Individual Sessions</span></li>
+                        <li><i class="fas fa-check"></i> <span id="p2F4">Monthly Progress & Performance Reports</span>
+                        </li>
+                        <li><i class="fas fa-check"></i> <span id="p2F5">Expert Egyptian Tutors</span></li>
+                    </ul>
+                    <button class="book-btn featured-btn" id="b2">Book Free Trial</button>
+                </div>
+
+                <!-- Intensive Plan -->
+                <div class="price-card" onclick="openBooking(document.getElementById('p3Name').innerText)">
+                    <div class="discount-badge" id="d3">Save 23%</div>
+                    <div class="plan-name" id="p3Name">Intensive Plan</div>
+                    <div class="old-price" id="p3Old">£180</div>
+                    <div class="new-price"><span id="p3NewPrice">£138</span><span class="cycle" id="p3Cycle">/mo</span>
+                    </div>
+                    <div class="hourly-rate-hint" id="p3Hourly">* Only £11.5 per hour</div>
+
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> <span id="p3F1">12 Live Classes / Month</span></li>
+                        <li><i class="fas fa-check"></i> <span id="p3F2">60 Minutes Full Hour</span></li>
+                        <li><i class="fas fa-check"></i> <span id="p3F3">1-on-1 Individual Sessions</span></li>
+                        <li><i class="fas fa-check"></i> <span id="p3F4">Monthly Progress & Performance Reports</span>
+                        </li>
+                        <li><i class="fas fa-check"></i> <span id="p3F5">Expert Egyptian Tutors</span></li>
+                    </ul>
+                    <button class="book-btn" id="b3">Book Free Trial</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2 class="section-title" id="contactTitle">Connect <span>With Us</span></h2>
+            <div class="contact-grid">
+                <a href="https://www.facebook.com/Arabour" target="_blank" class="contact-card"><i
+                        class="fab fa-facebook"></i>
+                    <h3>Facebook</h3>
+                </a>
+                <a href="https://www.instagram.com/arabour.academy/" target="_blank" class="contact-card"><i
+                        class="fab fa-instagram"></i>
+                    <h3>Instagram</h3>
+                </a>
+                <a href="https://www.youtube.com/@arabour.academy" target="_blank" class="contact-card"><i
+                        class="fab fa-youtube"></i>
+                    <h3>YouTube</h3>
+                </a>
+                <a href="mailto:arabour.academy@gmail.com" class="contact-card"><i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                </a>
+            </div>
+
+            <a href="https://wa.me/201070487205" target="_blank" class="whatsapp-horizontal-link">
+                <div class="whatsapp-horizontal-box">
+                    <i class="fab fa-whatsapp"></i>
+                    <h3 id="waText">For booking and inquiries, contact us on WhatsApp</h3>
+                </div>
+            </a>
+        </section>
+
+    </main>
+
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeBooking()">&times;</span>
+            <h2 id="modalHead" style="margin-bottom: 25px; text-align: center;">Registration Form</h2>
+            <form id="regForm" onsubmit="sendToWhatsApp(event)">
+                <input type="hidden" id="selectedPlan">
+                <input type="hidden" id="selectedPlanPrice">
+
+                <div class="form-group">
+                    <label id="lblStudentName">Student Full Name</label>
+                    <input type="text" id="studentName" required>
+                </div>
+                <div class="form-group">
+                    <label id="lblStudentAge">Student Age</label>
+                    <input type="number" id="studentAge" required>
+                </div>
+
+                <div class="form-group">
+                    <label id="lblCourses">Select Required Courses</label>
+                    <div class="custom-checkbox-grid">
+                        <label class="custom-checkbox-card" id="cardC1">
+                            <span id="lblC1">Arabic Language</span>
+                            <input type="checkbox" name="course" value="Arabic Language" id="c1"
+                                onchange="updateCheckboxStyle('c1', 'cardC1')">
+                            <span class="graphic-circle"><i class="fas fa-check"></i></span>
+                        </label>
+                        <label class="custom-checkbox-card" id="cardC2">
+                            <span id="lblC2">Holy Quran & Tajweed</span>
+                            <input type="checkbox" name="course" value="Holy Quran & Tajweed" id="c2"
+                                onchange="updateCheckboxStyle('c2', 'cardC2')">
+                            <span class="graphic-circle"><i class="fas fa-check"></i></span>
+                        </label>
+                        <label class="custom-checkbox-card" id="cardC3">
+                            <span id="lblC3">Islamic Studies</span>
+                            <input type="checkbox" name="course" value="Islamic Studies" id="c3"
+                                onchange="updateCheckboxStyle('c3', 'cardC3')">
+                            <span class="graphic-circle"><i class="fas fa-check"></i></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label id="lblStudentLevel">Student Level & Previous Studies</label>
+                    <input type="text" id="studentLevel" placeholder="e.g., Beginner..." required>
+                </div>
+
+                <div class="form-group">
+                    <label id="lblCountry">Country</label>
+                    <input type="text" id="countryName" placeholder="e.g., Egypt" required>
+                </div>
+
+                <div class="form-group">
+                    <label id="lblState">State / Province</label>
+                    <input type="text" id="stateName" placeholder="e.g., Cairo" required>
+                </div>
+
+                <div class="form-group">
+                    <label id="lblParentName">Parent Name</label>
+                    <input type="text" id="parentName" required>
+                </div>
+                <div class="form-group">
+                    <label id="lblParentWhatsapp">Parent WhatsApp Number</label>
+                    <!-- إضافة معرف لتغيير الـ Placeholder تلقائياً -->
+                    <input type="tel" id="parentWhatsapp" placeholder="+1..." required>
+                </div>
+                <div class="form-group">
+                    <label id="lblParentEmail">Parent Email Address</label>
+                    <input type="email" id="parentEmail" required>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">
+                        <i class="fab fa-whatsapp"></i> <span id="lblSubmit">Submit & Send</span>
+                    </button>
+                    <button type="button" class="reset-btn" onclick="clearForm()">
+                        <i class="fas fa-undo"></i> <span id="lblReset">Clear</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Arabour Academy. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
