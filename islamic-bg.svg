@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+  <defs>
+    <!-- Define the 8-pointed star -->
+    <g id="star">
+      <!-- Square 1 -->
+      <rect x="-16" y="-16" width="32" height="32" fill="none" stroke="#d4af37" stroke-width="0.75" opacity="0.08" />
+      <!-- Square 2 rotated 45 degrees -->
+      <rect x="-16" y="-16" width="32" height="32" fill="none" stroke="#d4af37" stroke-width="0.75" opacity="0.08" transform="rotate(45)" />
+      <!-- Smaller nested star -->
+      <rect x="-8" y="-8" width="16" height="16" fill="none" stroke="#d4af37" stroke-width="0.75" opacity="0.08" />
+      <rect x="-8" y="-8" width="16" height="16" fill="none" stroke="#d4af37" stroke-width="0.75" opacity="0.08" transform="rotate(45)" />
+      <!-- Tiny center circle -->
+      <circle cx="0" cy="0" r="3" fill="none" stroke="#d4af37" stroke-width="0.75" opacity="0.08" />
+    </g>
+
+    <!-- Define the octagon -->
+    <polygon id="octagon" points="44.35,18.37 18.37,44.35 -18.37,44.35 -44.35,18.37 -44.35,-18.37 -18.37,-44.35 18.37,-44.35 44.35,-18.37" fill="none" stroke="#d4af37" stroke-width="0.75" opacity="0.08" />
+
+    <!-- Define the repeating pattern -->
+    <pattern id="islamicLattice" width="160" height="160" patternUnits="userSpaceOnUse">
+      <!-- Deep dark blue base -->
+      <rect width="160" height="160" fill="#081721" />
+
+      <!-- Center grid lines -->
+      <line x1="0" y1="80" x2="160" y2="80" stroke="#d4af37" stroke-width="0.75" opacity="0.08" stroke-dasharray="2 2" />
+      <line x1="80" y1="0" x2="80" y2="160" stroke="#d4af37" stroke-width="0.75" opacity="0.08" stroke-dasharray="2 2" />
+      <line x1="0" y1="0" x2="160" y2="160" stroke="#d4af37" stroke-width="0.75" opacity="0.08" stroke-dasharray="2 2" />
+      <line x1="160" y1="0" x2="0" y2="160" stroke="#d4af37" stroke-width="0.75" opacity="0.08" stroke-dasharray="2 2" />
+
+      <!-- Stars at centers -->
+      <use href="#star" x="80" y="80" />
+      <use href="#star" x="0" y="0" />
+      <use href="#star" x="160" y="0" />
+      <use href="#star" x="0" y="160" />
+      <use href="#star" x="160" y="160" />
+      <use href="#star" x="80" y="0" />
+      <use href="#star" x="80" y="160" />
+      <use href="#star" x="0" y="80" />
+      <use href="#star" x="160" y="80" />
+
+      <!-- Octagons at center and corners -->
+      <use href="#octagon" x="80" y="80" />
+      <use href="#octagon" x="0" y="0" />
+      <use href="#octagon" x="160" y="0" />
+      <use href="#octagon" x="0" y="160" />
+      <use href="#octagon" x="160" y="160" />
+    </pattern>
+  </defs>
+
+  <!-- Fill with the pattern -->
+  <rect width="100%" height="100%" fill="url(#islamicLattice)" />
+</svg>
