@@ -581,28 +581,76 @@ html[dir="rtl"] .pricing-trust-item:last-child {
 }
 
 @media (max-width: 768px) {
-    .pricing-feature-bar {
-        margin-top: 0;
-        border-radius: 20px;
-        justify-content: center;
-    }
 
+    /* --- إعدادات المربع الأساسي (الأب) --- */
+    .pricing-feature-bar,
     .pricing-trust-bar {
-        border-radius: 16px;
-        padding: 16px 20px;
-        gap: 12px 0;
-        max-width: 100%;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 8px 4px !important;
+        gap: 2px !important;
+        /* تقليل المسافة بين العناصر لتوفير المساحة */
+        border-radius: 16px !important;
+        overflow: hidden !important;
+        /* يضمن عدم خروج أي شيء خارج حدود المربع */
     }
 
+    /* --- إعدادات العناصر الداخلية (الأبناء) --- */
+    .pricing-feature-item,
     .pricing-trust-item {
-        padding: 4px 16px;
-        font-size: 0.85rem;
-        border-right: none !important;
+        flex: 1 1 0% !important;
+        /* السر هنا: يجبر العناصر على التساوي والانكماش داخل المربع */
+        min-width: 0 !important;
+        /* يمنع تمدد العنصر خارج المربع بسبب طول النص */
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 3px !important;
+
+        /* خصائص النص المهمة جداً */
+        white-space: normal !important;
+        /* يسمح للنص بالنزول لسطر جديد داخل مساحته */
+        word-break: break-word !important;
+        /* كسر الكلمات الطويلة جداً إن وجدت */
+        text-align: center !important;
+        font-size: 9px !important;
+        /* خط صغير يناسب الموبايل */
+        line-height: 1.2 !important;
+        /* مسافة قريبة بين السطور عند التفاف النص */
+        padding: 0 2px !important;
+        border: none !important;
+    }
+
+    /* إضافة فواصل خفيفة بين العناصر (اختياري) */
+    .pricing-trust-item {
+        border-left: 1px solid rgba(0, 0, 0, 0.1) !important;
+    }
+
+    .pricing-trust-item:first-child {
         border-left: none !important;
     }
 
     html[dir="rtl"] .pricing-trust-item {
-        flex-direction: row-reverse;
+        flex-direction: row-reverse !important;
+    }
+
+    /* --- تصغير الأيقونات --- */
+    .pricing-feature-item img,
+    .pricing-feature-item svg,
+    .pricing-feature-item i,
+    .pricing-trust-item img,
+    .pricing-trust-item svg,
+    .pricing-trust-item i {
+        width: 12px !important;
+        height: 12px !important;
+        font-size: 12px !important;
+        flex-shrink: 0 !important;
+        /* يمنع انكماش الأيقونة نفسها وتشوهها */
     }
 }
 
